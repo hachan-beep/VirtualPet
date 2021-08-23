@@ -1,8 +1,10 @@
-
-void setup(){
-  //some of your code here
-}
-void draw(){
-  //more of your code here
-}
-
+size(400,400);
+background(200,230,250);
+fill(0,0,0);
+ellipse(200,200,200,200);
+ellipse(110,100,100,100);
+ellipse(290,100,100,100);
+fill(300,300,300);
+noStroke();
+ellipse(165,170,80,110);
+ellipse(235,170,80,110);
