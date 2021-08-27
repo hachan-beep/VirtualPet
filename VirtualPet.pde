@@ -1,10 +1,34 @@
-size(400,400);
-background(200,230,250);
-fill(0,0,0);
-ellipse(200,200,200,200);
-ellipse(110,100,100,100);
-ellipse(290,100,100,100);
-fill(300,300,300);
+import processing.serial.*;
+import cc.arduino.*;
+Arduino arduino;
+
+public void setup() {
+  size(500, 500);
+  arduino = new Arduino(this, Arduino.list()[0], 57600); //change the [0] to a [1] or [2] etc. if your program doesn't work
+}
+
+public void draw() {
+  background(210,230,250);
 noStroke();
-ellipse(165,170,80,110);
-ellipse(235,170,80,110);
+fill(211,211,211);
+ellipse(250,220,300,350); // body
+stroke(1);
+ellipse(380,230,150,150); // right ear
+ellipse(120,230,150,150); // left ear
+noStroke();
+fill(0,0,0);
+ellipse(210, 310,25,35); // left eye
+ellipse(290,310,25,35); // right eye
+triangle(220,350,250,380,280,350); // nose
+noFill();
+stroke(1);
+curve(50, 20, 80, 90, 250, 50, 250, 500); // tail
+line(300,350,350,320);
+line(300,360,360,360);
+line(300,370,360,395);
+line(200,350,150,320);
+line(200,360,140,360);
+line(200,370,150,395);
+  int y = arduino.analogRead(5);
+  System.out.println(y);
+}
